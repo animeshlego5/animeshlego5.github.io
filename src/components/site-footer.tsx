@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SOURCE_CODE_GITHUB_URL } from "@/config/site";
 import { cn } from "@/lib/utils";
 
+import { HitsCounter } from "./hits-counter";
 import { Icons } from "./icons";
 
 export function SiteFooter() {
@@ -34,6 +35,10 @@ export function SiteFooter() {
           </a>
           .
         </p>
+
+        <div className="mb-4 flex justify-center">
+          <HitsCounter />
+        </div>
 
         <div className="screen-line-before screen-line-after flex w-full before:z-1 after:z-1">
           <div className="mx-auto flex items-center justify-center gap-3 border-x border-edge bg-background px-4">
