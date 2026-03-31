@@ -18,7 +18,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/animeshlego5/animesh-portfolio.git"
+    "url": "git+https://github.com/animeshlego5/animeshlego5.github.io.git"
   },
   "scripts": {
     "dev": "next dev -p 1408",

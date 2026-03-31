@@ -26,8 +26,9 @@ export const MAIN_NAV: NavItem[] = [
 ];
 
 export const GITHUB_USERNAME = "animeshlego5";
-export const SOURCE_CODE_GITHUB_REPO = "animeshlego5/animesh-portfolio";
-export const SOURCE_CODE_GITHUB_URL = "https://github.com/animeshlego5/animesh-portfolio";
+export const SOURCE_CODE_GITHUB_REPO = "animeshlego5/animeshlego5.github.io";
+export const SOURCE_CODE_GITHUB_URL =
+  "https://github.com/animeshlego5/animeshlego5.github.io";
 
 // SPONSORSHIP_URL removed - GitHub Sponsors not set up for this account
 

@@ -33,7 +33,7 @@ export function HitsCounter({ className }: HitsCounterProps) {
 
         // First-time visitor — fetch from API (this increments the count)
         const counterUrl =
-          "https://hits.dwyl.com/animeshlego5/animesh-portfolio.json";
+          "https://hits.dwyl.com/animeshlego5/animeshlego5.github.io.json";
         const proxyUrl = `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(counterUrl)}`;
 
         const response = await fetch(proxyUrl);
