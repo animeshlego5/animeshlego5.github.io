@@ -10,12 +10,8 @@ interface HitsCounterProps {
   className?: string;
 }
 
-interface CounterResponse {
-  id: string;
-  namespace: string;
-  key: string;
-  count: number;
-}
+const STORAGE_KEY = "portfolio-visit-count";
+const VISITED_KEY = "portfolio-has-visited";
 
 export function HitsCounter({ className }: HitsCounterProps) {
   const [hits, setHits] = useState<number | null>(null);
@@ -24,29 +20,37 @@ export function HitsCounter({ className }: HitsCounterProps) {
   useEffect(() => {
     async function trackAndFetchHits() {
       try {
-        const NAMESPACE = "animeshlego5-portfolio";
-        const KEY = "visits";
-        const STORAGE_KEY = `visited-${NAMESPACE}`;
+        const hasVisited = localStorage.getItem(VISITED_KEY);
 
-        // Check if user has already been counted in this browser
-        const hasVisited = localStorage.getItem(STORAGE_KEY);
+        if (hasVisited) {
+          // Returning visitor — show cached count, don't hit the API
+          const cachedCount = localStorage.getItem(STORAGE_KEY);
+          if (cachedCount) {
+            setHits(parseInt(cachedCount, 10));
+          }
+          return;
+        }
 
-        // If first time, use /up to increment, otherwise just fetch current count
-        const mode = hasVisited ? "" : "/up";
-        const url = `https://api.counterapi.dev/v1/${NAMESPACE}/${KEY}${mode}`;
+        // First-time visitor — fetch from API (this increments the count)
+        const counterUrl =
+          "https://hits.dwyl.com/animeshlego5/animesh-portfolio.json";
+        const proxyUrl = `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(counterUrl)}`;
 
-        const response = await fetch(url);
-        if (!response.ok) throw new Error("Counter API failed");
+        const response = await fetch(proxyUrl);
+        if (!response.ok)
+          throw new Error(`Proxy responded with ${response.status}`);
 
-        const data = (await response.json()) as CounterResponse;
-        setHits(data.count);
+        const data = (await response.json()) as { message: string };
+        const count = parseInt(data.message.replace(/,/g, ""), 10);
 
-        // Mark as visited to prevent recount on refresh
-        if (!hasVisited) {
-          localStorage.setItem(STORAGE_KEY, "true");
+        if (!isNaN(count)) {
+          setHits(count);
+          // Cache the count and mark as visited
+          localStorage.setItem(STORAGE_KEY, String(count));
+          localStorage.setItem(VISITED_KEY, "true");
         }
       } catch (error) {
-        console.error("Failed to fetch hits:", error);
+        console.error("[HitsCounter] Error:", error);
       } finally {
         setIsLoading(false);
       }
@@ -64,7 +68,7 @@ export function HitsCounter({ className }: HitsCounterProps) {
         )}
       >
         <EyeIcon className="size-3" />
-        <span>...</span>
+        <span className="font-mono">...</span>
       </div>
     );
   }
