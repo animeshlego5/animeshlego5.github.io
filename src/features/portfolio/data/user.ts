@@ -24,8 +24,8 @@ export const USER = {
 - **400+ LeetCode Problems Solved** — strong foundation in data structures and algorithms.
 - Building real-world applications with **Next.js**, **FastAPI**, **Spring Boot**, and **Bun**.
 `,
-  avatar: "/animesh-portfolio/profile-pic.jpg",
-  ogImage: "/animesh-portfolio/icon.svg",
+  avatar: "/profile-pic.jpg",
+  ogImage: "/icon.svg",
   namePronunciationUrl: "",
   timeZone: "Asia/Kolkata",
   keywords: [

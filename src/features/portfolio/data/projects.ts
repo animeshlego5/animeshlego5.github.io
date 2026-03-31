@@ -8,7 +8,7 @@ export const PROJECTS: Project[] = [
       start: "01.2026",
     },
     link: "https://notespy.vercel.app/",
-    logo: "/animesh-portfolio/icon.png",
+    logo: "/icon.png",
     skills: ["Next.js", "FastAPI", "Python", "PostgreSQL", "Machine Learning"],
     description: `Music Recognition & Recommendation Engine
 
@@ -26,8 +26,8 @@ A Shazam-like web app with advanced music identification capabilities:
     period: {
       start: "01.2026",
     },
-    link: "https://animeshlego5.github.io/animesh-portfolio/",
-    logo: "/animesh-portfolio/icon.svg",
+    link: "https://animeshlego5.github.io/",
+    logo: "/icon.svg",
     skills: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
     description: `Modern Developer Portfolio
 
@@ -45,7 +45,7 @@ A sleek, responsive portfolio website showcasing projects and skills:
       start: "01.2025",
     },
     link: "https://think-weave.vercel.app/",
-    logo: "/animesh-portfolio/thinkweave-logo.svg",
+    logo: "/thinkweave-logo.svg",
     skills: [
       "React",
       "Node.js",

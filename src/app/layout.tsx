@@ -78,17 +78,17 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/animesh-portfolio/icon.png",
+        url: "/icon.png",
         type: "image/png",
         sizes: "192x192",
       },
       {
-        url: "/animesh-portfolio/icon.svg",
+        url: "/icon.svg",
         type: "image/svg+xml",
       },
     ],
     apple: {
-      url: "/animesh-portfolio/icon.png",
+      url: "/icon.png",
       type: "image/png",
       sizes: "180x180",
     },
@@ -133,9 +133,7 @@ export default function RootLayout({
 
       <body>
         <Providers>
-          <NuqsAdapter>
-            {children}
-          </NuqsAdapter>
+          <NuqsAdapter>{children}</NuqsAdapter>
         </Providers>
       </body>
     </html>
