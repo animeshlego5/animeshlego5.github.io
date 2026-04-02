@@ -93,7 +93,7 @@ export function ExperiencePositionItem({
           </div>
         </CollapsibleTrigger>
 
-        <div className="relative -ml-4 pl-4 after:absolute after:top-0 after:-bottom-4 after:left-0 after:w-[2px] after:bg-foreground after:opacity-0 after:transition-opacity group-data-[state=open]/experience:after:opacity-100">
+        <div className="relative -ml-4 pl-4 after:absolute after:top-0 after:-bottom-[15px] after:left-0 after:w-[2px] after:bg-foreground after:opacity-0 after:transition-opacity group-data-[state=open]/experience:after:opacity-100">
           <CollapsibleContent className="overflow-hidden duration-300 data-[state=closed]:animate-collapsible-fade-up data-[state=open]:animate-collapsible-fade-down">
             {position.description && (
               <ProseMono className="pt-2 pl-9">
