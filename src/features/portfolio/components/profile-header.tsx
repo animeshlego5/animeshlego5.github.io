@@ -1,7 +1,6 @@
 import { USER } from "@/features/portfolio/data/user";
 import { FlipSentences } from "@/registry/flip-sentences";
 
-import { PronounceMyName } from "./pronounce-my-name";
 import { VerifiedIcon } from "./verified-icon";
 
 export function ProfileHeader() {
@@ -23,7 +22,7 @@ export function ProfileHeader() {
           rel="noreferrer"
           className="absolute top-0 -left-px"
         >
-          {/* Flag of India with Ashoka Chakra */}
+          {/* Flag of India*/}
           <svg
             className="h-8 sm:h-9"
             viewBox="0 0 225 150"
@@ -38,7 +37,14 @@ export function ProfileHeader() {
               <circle r="3.5" fill="#000080" />
               {[...Array(24)].map((_, i) => (
                 <g key={i} transform={`rotate(${i * 15})`}>
-                  <line x1="0" y1="3.5" x2="0" y2="20" stroke="#000080" strokeWidth="0.5" />
+                  <line
+                    x1="0"
+                    y1="3.5"
+                    x2="0"
+                    y2="20"
+                    stroke="#000080"
+                    strokeWidth="0.5"
+                  />
                   <circle cx="0" cy="17" r="1" fill="#000080" />
                 </g>
               ))}
@@ -67,12 +73,6 @@ export function ProfileHeader() {
               className="size-4.5 text-info select-none"
               aria-label="Verified"
             />
-
-            {USER.namePronunciationUrl && (
-              <PronounceMyName
-                namePronunciationUrl={USER.namePronunciationUrl}
-              />
-            )}
           </div>
 
           <div className="h-12.5 border-t border-edge py-1 pl-4 sm:h-9">
