@@ -26,7 +26,7 @@ export function ExperiencePositionItem({
 
   return (
     <CollapsibleWithContext defaultOpen={position.isExpanded} asChild>
-      <div className="relative border-l-2 border-transparent transition-colors last:before:absolute last:before:h-full last:before:w-4 last:before:bg-background data-[state=open]:border-l-foreground">
+      <div className="relative -ml-4 border-l-2 border-transparent pl-4 transition-colors last:before:absolute last:before:left-6 last:before:h-full last:before:w-4 last:before:bg-background data-[state=open]:border-l-foreground">
         <CollapsibleTrigger
           className={cn(
             "block w-full cursor-pointer text-left transition-transform active:scale-[0.995]",
