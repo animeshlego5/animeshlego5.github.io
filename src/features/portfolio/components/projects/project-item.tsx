@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/tooltip";
 import { ProseMono } from "@/components/ui/typography";
 import { UTM_PARAMS } from "@/config/site";
+import { cn } from "@/lib/utils";
 import { addQueryParams } from "@/utils/url";
 
 import type { Project } from "../../types/projects";
@@ -33,7 +34,12 @@ export function ProjectItem({
 
   return (
     <CollapsibleWithContext defaultOpen={project.isExpanded} asChild>
-      <div className={className}>
+      <div
+        className={cn(
+          "border-l-2 border-transparent transition-colors data-[state=open]:border-info",
+          className
+        )}
+      >
         <div className="flex cursor-pointer items-center transition-colors hover:bg-accent">
           <div
             className="mx-4 flex size-6 shrink-0 items-center justify-center rounded-lg border border-muted-foreground/15 bg-muted text-muted-foreground ring-1 ring-edge ring-offset-1 ring-offset-background select-none"
