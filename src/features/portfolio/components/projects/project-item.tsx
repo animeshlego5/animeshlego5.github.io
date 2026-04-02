@@ -34,7 +34,7 @@ export function ProjectItem({
   return (
     <CollapsibleWithContext defaultOpen={project.isExpanded} asChild>
       <div className={className}>
-        <div className="flex items-center hover:bg-accent2">
+        <div className="flex cursor-pointer items-center transition-colors hover:bg-accent">
           <div
             className="mx-4 flex size-6 shrink-0 items-center justify-center rounded-lg border border-muted-foreground/15 bg-muted text-muted-foreground ring-1 ring-edge ring-offset-1 ring-offset-background select-none"
             aria-hidden="true"
@@ -55,7 +55,7 @@ export function ProjectItem({
           </div>
 
           <div className="flex-1 border-l border-dashed border-edge">
-            <CollapsibleTrigger className="flex w-full items-center gap-2 p-4 pr-2 text-left">
+            <CollapsibleTrigger className="flex w-full items-center gap-2 p-4 pr-2 text-left transition-transform active:scale-[0.995]">
               <div className="flex-1">
                 <h3 className="mb-1 leading-snug font-medium text-balance">
                   {project.title}
