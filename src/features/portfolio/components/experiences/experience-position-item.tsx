@@ -3,7 +3,7 @@ import React from "react";
 
 import { Markdown } from "@/components/markdown";
 import {
-  CollapsibleChevronsIcon,
+  CollapsibleChevronIcon,
   CollapsibleContent,
   CollapsibleTrigger,
   CollapsibleWithContext,
@@ -53,7 +53,7 @@ export function ExperiencePositionItem({
               className="shrink-0 text-muted-foreground [&_svg]:size-4"
               aria-hidden
             >
-              <CollapsibleChevronsIcon />
+              <CollapsibleChevronIcon />
             </div>
           </div>
 

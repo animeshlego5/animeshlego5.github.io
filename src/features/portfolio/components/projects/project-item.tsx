@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Markdown } from "@/components/markdown";
 import {
-  CollapsibleChevronsIcon,
+  CollapsibleChevronIcon,
   CollapsibleContent,
   CollapsibleTrigger,
   CollapsibleWithContext,
@@ -46,7 +46,7 @@ export function ProjectItem({
                 width={32}
                 height={32}
                 quality={100}
-                className="size-7 object-contain scale-125"
+                className="size-7 scale-125 object-contain"
                 unoptimized
               />
             ) : (
@@ -107,7 +107,7 @@ export function ProjectItem({
                 className="shrink-0 text-muted-foreground [&_svg]:size-4"
                 aria-hidden
               >
-                <CollapsibleChevronsIcon />
+                <CollapsibleChevronIcon />
               </div>
             </CollapsibleTrigger>
           </div>

@@ -1,7 +1,10 @@
 "use client";
 
+import { ChevronDownIcon } from "lucide-react";
 import { Collapsible as CollapsiblePrimitive } from "radix-ui";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
+
+import { cn } from "@/lib/utils";
 
 import type { ChevronsDownUpIconHandle } from "../animated-icons/chevrons-down-up-icon";
 import { ChevronsDownUpIcon } from "../animated-icons/chevrons-down-up-icon";
@@ -65,6 +68,7 @@ function CollapsibleWithContext({
   );
 }
 
+/** @deprecated Use CollapsibleChevronIcon instead */
 function CollapsibleChevronsIcon() {
   const { open } = useCollapsible();
 
@@ -84,8 +88,23 @@ function CollapsibleChevronsIcon() {
   return <ChevronsDownUpIcon ref={ref} />;
 }
 
+function CollapsibleChevronIcon({ className }: { className?: string }) {
+  const { open } = useCollapsible();
+
+  return (
+    <ChevronDownIcon
+      className={cn(
+        "size-4 transition-transform duration-200 ease-in-out",
+        open && "rotate-180",
+        className
+      )}
+    />
+  );
+}
+
 export {
   Collapsible,
+  CollapsibleChevronIcon,
   CollapsibleChevronsIcon,
   CollapsibleContent,
   CollapsibleTrigger,

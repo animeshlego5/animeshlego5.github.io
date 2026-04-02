@@ -3,7 +3,7 @@ import { TextIcon } from "lucide-react";
 
 import type { Collapsible } from "@/components/ui/collapsible";
 import {
-  CollapsibleChevronsIcon,
+  CollapsibleChevronIcon,
   CollapsibleContent,
   CollapsibleTrigger,
   CollapsibleWithContext,
@@ -31,7 +31,7 @@ export function InlineTOC({
         <TextIcon className="-translate-x-0.5" />
         {children ?? "On this page"}
         <div className="ml-auto shrink-0 text-muted-foreground" aria-hidden>
-          <CollapsibleChevronsIcon />
+          <CollapsibleChevronIcon />
         </div>
       </CollapsibleTrigger>
 
