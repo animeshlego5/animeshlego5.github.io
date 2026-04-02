@@ -26,7 +26,7 @@ export function ExperiencePositionItem({
 
   return (
     <CollapsibleWithContext defaultOpen={position.isExpanded} asChild>
-      <div className="relative border-l-2 border-transparent transition-colors last:before:absolute last:before:h-full last:before:w-4 last:before:bg-background data-[state=open]:border-info">
+      <div className="relative border-l-2 border-transparent transition-colors last:before:absolute last:before:h-full last:before:w-4 last:before:bg-background data-[state=open]:border-l-foreground">
         <CollapsibleTrigger
           className={cn(
             "block w-full cursor-pointer text-left transition-transform active:scale-[0.995]",
@@ -50,10 +50,9 @@ export function ExperiencePositionItem({
             </h4>
 
             <div
-              className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground"
+              className="flex shrink-0 items-center gap-1 text-xs text-foreground"
               aria-hidden
             >
-              <span className="hidden sm:inline">Details</span>
               <CollapsibleChevronIcon />
             </div>
           </div>

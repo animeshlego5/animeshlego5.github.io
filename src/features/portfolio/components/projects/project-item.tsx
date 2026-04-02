@@ -36,7 +36,7 @@ export function ProjectItem({
     <CollapsibleWithContext defaultOpen={project.isExpanded} asChild>
       <div
         className={cn(
-          "border-l-2 border-transparent transition-colors data-[state=open]:border-info",
+          "border-l-2 border-transparent transition-colors data-[state=open]:border-l-foreground",
           className
         )}
       >
@@ -110,10 +110,9 @@ export function ProjectItem({
               </Tooltip>
 
               <div
-                className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground"
+                className="flex shrink-0 items-center gap-1 text-xs text-foreground"
                 aria-hidden
               >
-                <span className="hidden sm:inline">Details</span>
                 <CollapsibleChevronIcon />
               </div>
             </CollapsibleTrigger>
