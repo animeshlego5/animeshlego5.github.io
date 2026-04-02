@@ -26,7 +26,7 @@ export function ExperiencePositionItem({
 
   return (
     <CollapsibleWithContext defaultOpen={position.isExpanded} asChild>
-      <div className="relative -ml-4 border-l-2 border-transparent pl-4 transition-colors last:before:absolute last:before:left-6 last:before:h-full last:before:w-4 last:before:bg-background data-[state=open]:border-l-foreground">
+      <div className="group/experience relative transition-colors last:before:absolute last:before:left-3 last:before:h-full last:before:w-4 last:before:bg-background">
         <CollapsibleTrigger
           className={cn(
             "block w-full cursor-pointer text-left transition-transform active:scale-[0.995]",
@@ -93,23 +93,25 @@ export function ExperiencePositionItem({
           </div>
         </CollapsibleTrigger>
 
-        <CollapsibleContent className="overflow-hidden duration-300 data-[state=closed]:animate-collapsible-fade-up data-[state=open]:animate-collapsible-fade-down">
-          {position.description && (
-            <ProseMono className="pt-2 pl-9">
-              <Markdown>{position.description}</Markdown>
-            </ProseMono>
-          )}
-        </CollapsibleContent>
+        <div className="-ml-4 border-l-2 border-transparent pl-4 transition-colors group-data-[state=open]/experience:border-l-foreground">
+          <CollapsibleContent className="overflow-hidden duration-300 data-[state=closed]:animate-collapsible-fade-up data-[state=open]:animate-collapsible-fade-down">
+            {position.description && (
+              <ProseMono className="pt-2 pl-9">
+                <Markdown>{position.description}</Markdown>
+              </ProseMono>
+            )}
+          </CollapsibleContent>
 
-        {Array.isArray(position.skills) && position.skills.length > 0 && (
-          <ul className="flex flex-wrap gap-1.5 pt-3 pl-9">
-            {position.skills.map((skill, index) => (
-              <li key={index} className="flex">
-                <Tag>{skill}</Tag>
-              </li>
-            ))}
-          </ul>
-        )}
+          {Array.isArray(position.skills) && position.skills.length > 0 && (
+            <ul className="flex flex-wrap gap-1.5 pt-3 pl-9">
+              {position.skills.map((skill, index) => (
+                <li key={index} className="flex">
+                  <Tag>{skill}</Tag>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </CollapsibleWithContext>
   );
