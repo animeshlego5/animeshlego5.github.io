@@ -34,12 +34,7 @@ export function ProjectItem({
 
   return (
     <CollapsibleWithContext defaultOpen={project.isExpanded} asChild>
-      <div
-        className={cn(
-          "border-l-2 border-transparent transition-colors data-[state=open]:border-l-foreground",
-          className
-        )}
-      >
+      <div className={className}>
         <div className="flex cursor-pointer items-center transition-colors hover:bg-accent">
           <div
             className="mx-4 flex size-6 shrink-0 items-center justify-center rounded-lg border border-muted-foreground/15 bg-muted text-muted-foreground ring-1 ring-edge ring-offset-1 ring-offset-background select-none"
@@ -120,7 +115,7 @@ export function ProjectItem({
         </div>
 
         <CollapsibleContent className="group overflow-hidden duration-300 data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
-          <div className="border-t border-edge shadow-inner">
+          <div className="border-t border-l-2 border-edge border-l-foreground shadow-inner">
             <div className="space-y-4 p-4 duration-300 group-data-[state=closed]:animate-fade-out group-data-[state=open]:animate-fade-in">
               {project.description && (
                 <ProseMono>
