@@ -25,7 +25,7 @@ export function ExperiencePositionItem({
   const isOngoing = !end;
 
   return (
-    <CollapsibleWithContext defaultOpen={position.isExpanded} asChild>
+    <CollapsibleWithContext defaultOpen={position.isExpanded ?? true} asChild>
       <div className="group/experience relative transition-colors last:before:absolute last:before:left-3 last:before:h-full last:before:w-4 last:before:bg-background">
         <CollapsibleTrigger
           className={cn(
