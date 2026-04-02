@@ -50,9 +50,10 @@ export function ExperiencePositionItem({
             </h4>
 
             <div
-              className="shrink-0 text-muted-foreground [&_svg]:size-4"
+              className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground"
               aria-hidden
             >
+              <span className="hidden sm:inline">Details</span>
               <CollapsibleChevronIcon />
             </div>
           </div>
