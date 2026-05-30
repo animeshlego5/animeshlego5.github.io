@@ -44,7 +44,7 @@ export function SiteFooter() {
           <div className="mx-auto flex items-center justify-center gap-3 border-x border-edge bg-background px-4">
             <a
               className="flex items-center text-muted-foreground transition-colors hover:text-foreground"
-              href="https://x.com/LukaATM"
+              href="https://x.com/Ani_meshX"
               target="_blank"
               rel="noopener noreferrer"
             >
