@@ -20,6 +20,36 @@ An autonomous workflow that scrapes LinkedIn and scores jobs against a custom sk
     isExpanded: true,
   },
   {
+    id: "enterprise-qna",
+    title: "Enterprise QnA",
+    period: {
+      start: "05.2026",
+    },
+    link: "https://github.com/animeshlego5/enterprise-qna",
+    logo: "/enterprise-qna-logo.png",
+    skills: [
+      "Next.js",
+      "FastAPI",
+      "Python",
+      "PostgreSQL",
+      "pgvector",
+      "Redis",
+      "RAG",
+      "Clerk",
+      "Docker",
+      "Google Gemini",
+    ],
+    description: `Dual-Mode RAG System (Cloud + Local / Free)
+
+A production-grade Retrieval-Augmented Generation platform that lets users query a private document knowledge base in natural language — with two fully implemented operating modes:
+
+- **Cloud mode** — PDF is chunked and embedded server-side (all-MiniLM-L6-v2), stored in PostgreSQL with pgvector, and answers are streamed token-by-token via Server-Sent Events from Google Gemini 2.5 Flash. A semantic cache (cosine sim ≥ 0.92) skips redundant LLM calls. Auth is handled by Clerk (RS256 JWT verified server-side via PyJWT + JWKS).
+- **Local / Free mode** — runs entirely in the browser: PDF text extraction with pdfjs-dist, ONNX embeddings via @huggingface/transformers, vector search over IndexedDB, and streaming directly from the user's own OpenAI / Gemini / Anthropic key — zero server cost.
+- Redis Streams power an async worker queue (XREADGROUP) so LLM jobs are processed reliably without blocking the API.
+- Prometheus metrics endpoint, structured logging with structlog, and Docker Compose orchestration for one-command deployment.`,
+    isExpanded: true,
+  },
+  {
     id: "notespy",
     title: "NoteSpy",
     period: {
