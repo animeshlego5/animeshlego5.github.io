@@ -26,7 +26,7 @@ An autonomous workflow that scrapes LinkedIn and scores jobs against a custom sk
       start: "05.2026",
     },
     link: "https://github.com/animeshlego5/enterprise-qna",
-    logo: "/enterprise-qna-logo.png",
+    logo: "/q-icon.svg",
     skills: [
       "Next.js",
       "FastAPI",
@@ -41,12 +41,12 @@ An autonomous workflow that scrapes LinkedIn and scores jobs against a custom sk
     ],
     description: `Dual-Mode RAG System (Cloud + Local / Free)
 
-A production-grade Retrieval-Augmented Generation platform that lets users query a private document knowledge base in natural language — with two fully implemented operating modes:
+RAG platform for querying a private document knowledge base — two operating modes:
 
-- **Cloud mode** — PDF is chunked and embedded server-side (all-MiniLM-L6-v2), stored in PostgreSQL with pgvector, and answers are streamed token-by-token via Server-Sent Events from Google Gemini 2.5 Flash. A semantic cache (cosine sim ≥ 0.92) skips redundant LLM calls. Auth is handled by Clerk (RS256 JWT verified server-side via PyJWT + JWKS).
-- **Local / Free mode** — runs entirely in the browser: PDF text extraction with pdfjs-dist, ONNX embeddings via @huggingface/transformers, vector search over IndexedDB, and streaming directly from the user's own OpenAI / Gemini / Anthropic key — zero server cost.
-- Redis Streams power an async worker queue (XREADGROUP) so LLM jobs are processed reliably without blocking the API.
-- Prometheus metrics endpoint, structured logging with structlog, and Docker Compose orchestration for one-command deployment.`,
+- **Cloud mode** — PDFs uploaded and chunked server-side, embedded with all-MiniLM-L6-v2, stored in PostgreSQL + pgvector, and streamed via SSE from Gemini 2.5 Flash. Semantic cache (cosine sim ≥ 0.92) skips redundant LLM calls. Clerk auth with RS256 JWT verified via PyJWT + JWKS.
+- **Local / Free mode** — fully browser-side: PDF extraction (pdfjs-dist), ONNX embeddings (@huggingface/transformers), cosine search over persistent IndexedDB, and streamed directly from the user's own OpenAI / Gemini / Anthropic key — zero server cost.
+- Redis Streams async worker queue (XREADGROUP) decouples the API from LLM processing for reliable, non-blocking job handling.
+- Prometheus metrics, structlog structured logging, Docker Compose one-command deployment.`,
     isExpanded: true,
   },
   {
