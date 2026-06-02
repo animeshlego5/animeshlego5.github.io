@@ -35,9 +35,9 @@ An autonomous workflow that scrapes LinkedIn and scores jobs against a custom sk
       "pgvector",
       "Redis",
       "RAG",
-      "Clerk",
-      "Docker",
-      "Google Gemini",
+      "LangChain",
+      "Transformers",
+      "LLMs",
     ],
     description: `Dual-Mode RAG System (Cloud + Local / Free)
 
