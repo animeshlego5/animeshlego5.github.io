@@ -1,3 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <text x="50" y="75" font-family="system-ui, sans-serif" font-size="72" font-weight="bold" fill="#da7756" text-anchor="middle">Q</text>
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <path
+    d="M20 11.5a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0Z"
+    stroke="url(#q-gradient)" stroke-width="1.5"
+  />
+  <path
+    d="M17.5 17.5L22 22"
+    stroke="url(#q-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+  />
+  <path
+    d="M11.5 7L12.5 10L15.5 11L12.5 12L11.5 15L10.5 12L7.5 11L10.5 10L11.5 7Z"
+    fill="white" opacity="0.8"
+  />
+  <defs>
+    <linearGradient id="q-gradient" x1="3" y1="3" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.3" />
+    </linearGradient>
+  </defs>
 </svg>
