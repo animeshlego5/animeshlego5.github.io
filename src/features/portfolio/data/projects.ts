@@ -25,7 +25,7 @@ An autonomous workflow that scrapes LinkedIn and scores jobs against a custom sk
     period: {
       start: "05.2026",
     },
-    link: "https://github.com/animeshlego5/enterprise-qna",
+    link: "https://enterprise-qna.vercel.app/",
     logo: "/q-icon.svg",
     skills: [
       "Next.js",
@@ -44,7 +44,7 @@ An autonomous workflow that scrapes LinkedIn and scores jobs against a custom sk
 RAG platform for querying a private document knowledge base — two operating modes:
 
 - **Cloud mode** — PDFs uploaded and chunked server-side, embedded with all-MiniLM-L6-v2, stored in PostgreSQL + pgvector, and streamed via SSE from Gemini 2.5 Flash. Semantic cache (cosine sim ≥ 0.92) skips redundant LLM calls. Clerk auth with RS256 JWT verified via PyJWT + JWKS.
-- **Local / Free mode** — fully browser-side: PDF extraction (pdfjs-dist), ONNX embeddings (@huggingface/transformers), cosine search over persistent IndexedDB, and streamed directly from the user's own OpenAI / Gemini / Anthropic key — zero server cost.
+- **Local / Free mode** — 100% private, fully browser-side: PDF extraction (pdfjs-dist), ONNX embeddings (@huggingface/transformers), cosine search over persistent IndexedDB, and streamed directly from the user's own OpenAI / Gemini / Anthropic key — zero server cost.
 - Redis Streams async worker queue (XREADGROUP) decouples the API from LLM processing for reliable, non-blocking job handling.
 - Prometheus metrics, structlog structured logging, Docker Compose one-command deployment.`,
     isExpanded: true,
