@@ -31,17 +31,16 @@ export function HitsCounter({ className }: HitsCounterProps) {
           return;
         }
 
-        // First-time visitor — fetch from API (this increments the count)
+        // First-time visitor — increment the counter and read the new total.
         const counterUrl =
-          "https://hits.dwyl.com/animeshlego5/animeshlego5.github.io.json";
-        const proxyUrl = `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(counterUrl)}`;
+          "https://api.counterapi.dev/v1/animeshlego5-github-io/pageviews/up";
 
-        const response = await fetch(proxyUrl);
+        const response = await fetch(counterUrl);
         if (!response.ok)
-          throw new Error(`Proxy responded with ${response.status}`);
+          throw new Error(`Counter responded with ${response.status}`);
 
-        const data = (await response.json()) as { message: string };
-        const count = parseInt(data.message.replace(/,/g, ""), 10);
+        const data = (await response.json()) as { count: number };
+        const count = Number(data.count);
 
         if (!isNaN(count)) {
           setHits(count);
