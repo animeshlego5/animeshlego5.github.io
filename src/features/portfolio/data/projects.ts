@@ -2,6 +2,37 @@ import type { Project } from "../types/projects";
 
 export const PROJECTS: Project[] = [
   {
+    id: "un-doomed",
+    title: "Un-Doomed",
+    period: {
+      start: "06.2026",
+    },
+    link: "https://undoomed.vercel.app/",
+    logo: "/undoomed-logo.svg",
+    skills: [
+      "Python",
+      "FastAPI",
+      "LangGraph",
+      "LangChain",
+      "SQLite",
+      "JavaScript",
+      "Chrome MV3",
+      "React",
+      "Vite",
+      "Docker",
+      "LLMs",
+    ],
+    description: `Socratic AI Code Reviewer (One Backend · Many Clients)
+
+AI reviewer that guides developers to their own bugs with questions instead of handing over the fix — one FastAPI + LangGraph brain, several thin clients:
+
+- **Three-stage review graph** — a LangGraph state machine routes on structured LLM output: an Edge-Case Executioner finds bugs, a Socratic Tutor turns each into a guiding question (never code), and a Clean-Code Critic reviews Big-O + style once logic is sound. A SQLite checkpointer persists per-problem state, so attempt counts survive restarts and hints escalate to a plain-English answer after 3+ tries.
+- **Bring-your-own-key, multi-provider** — OpenAI, Anthropic, Gemini, or DeepSeek, chosen per request and imported lazily; clients send their own credentials, so the server stores zero secrets.
+- **Browser extension (Manifest V3)** — a service worker reads live code from LeetCode's Monaco editor via MAIN-world injection, scrapes the problem + constraints, and renders results in a Shadow-DOM overlay; unchanged code re-shows cached results for zero wasted tokens.
+- **One backend, many clients** — the extension, a undoom CLI, and a VS Code extension share one Dockerized FastAPI server (Render / Railway, optional shared-secret auth) with per-file thread memory; an agent.md makes Claude Code / Cursor relay hints instead of fixes.`,
+    isExpanded: true,
+  },
+  {
     id: "n8n-linkedin-job-search-automation",
     title: "n8n-linkedin-job-search-automation",
     period: {
@@ -9,7 +40,14 @@ export const PROJECTS: Project[] = [
     },
     link: "https://github.com/animeshlego5/n8n-linkedin-job-search-automation",
     logo: "/job-scraper-logo.png",
-    skills: ["n8n", "Apify", "JavaScript", "Google Sheets API", "Supabase", "Docker"],
+    skills: [
+      "n8n",
+      "Apify",
+      "JavaScript",
+      "Google Sheets API",
+      "Supabase",
+      "Docker",
+    ],
     description: `Serverless Job Matching Workflow (n8n + Apify)
 
 An autonomous workflow that scrapes LinkedIn and scores jobs against a custom skill matrix:
