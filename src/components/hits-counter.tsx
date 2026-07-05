@@ -18,24 +18,24 @@ export function HitsCounter({ className }: HitsCounterProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const BASE =
+      "https://api.counterapi.dev/v1/animeshlego5-github-io/pageviews";
+
     async function trackAndFetchHits() {
+      const hasVisited = localStorage.getItem(VISITED_KEY);
+
+      // Show the cached count immediately so there's always a number on screen,
+      // then refresh it from the API below.
+      const cachedCount = localStorage.getItem(STORAGE_KEY);
+      if (cachedCount) {
+        const parsed = parseInt(cachedCount, 10);
+        if (!isNaN(parsed)) setHits(parsed);
+      }
+
       try {
-        const hasVisited = localStorage.getItem(VISITED_KEY);
-
-        if (hasVisited) {
-          // Returning visitor — show cached count, don't hit the API
-          const cachedCount = localStorage.getItem(STORAGE_KEY);
-          if (cachedCount) {
-            setHits(parseInt(cachedCount, 10));
-          }
-          return;
-        }
-
-        // First-time visitor — increment the counter and read the new total.
-        const counterUrl =
-          "https://api.counterapi.dev/v1/animeshlego5-github-io/pageviews/up";
-
-        const response = await fetch(counterUrl);
+        // First-time visitors hit `/up` to increment; returning visitors read
+        // the current total (bare endpoint) without inflating the count.
+        const response = await fetch(hasVisited ? BASE : `${BASE}/up`);
         if (!response.ok)
           throw new Error(`Counter responded with ${response.status}`);
 
@@ -44,11 +44,11 @@ export function HitsCounter({ className }: HitsCounterProps) {
 
         if (!isNaN(count)) {
           setHits(count);
-          // Cache the count and mark as visited
           localStorage.setItem(STORAGE_KEY, String(count));
           localStorage.setItem(VISITED_KEY, "true");
         }
       } catch (error) {
+        // Network/API failure — keep whatever cached value we already showed.
         console.error("[HitsCounter] Error:", error);
       } finally {
         setIsLoading(false);
