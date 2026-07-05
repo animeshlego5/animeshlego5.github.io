@@ -2,6 +2,39 @@ import type { Experience } from "../types/experiences";
 
 export const EXPERIENCES: Experience[] = [
   {
+    id: "collinear-ai",
+    companyName: "Collinear AI (Freelance)",
+    companyLogo: "/collinear-logo.jpg",
+    positions: [
+      {
+        id: "collinear-ai-engineer",
+        title: "AI Engineer",
+        employmentPeriod: {
+          start: "05.2026",
+        },
+        employmentType: "Freelance",
+        icon: "code",
+        description: `AI Engineer · Remote
+
+- Built Dockerized enterprise SaaS clone environments as agentic evaluation sandboxes, exposing each via dual-access evaluation (REST tool calls + a Playwright-driven UI at 95% visual fidelity) so LLM agents could be benchmarked on realistic multi-step tasks.
+- Designed ~50 typed agent tools per environment as JSON-Schema definitions served over a FastAPI /step endpoint, giving agents a structured function-calling interface to act on a PostgreSQL backend.
+- Built reward verifiers that query Postgres directly to score agent trajectories, producing the labeled signal used to improve frontier-model performance.`,
+        skills: [
+          "Docker",
+          "Playwright",
+          "FastAPI",
+          "PostgreSQL",
+          "Agentic Evaluation",
+          "REST",
+          "JSON Schema",
+          "Function Calling",
+          "LLM Benchmarking",
+        ],
+      },
+    ],
+    isCurrentEmployer: true,
+  },
+  {
     id: "iabhai-enterprises",
     companyName: "I.A.BHAI Enterprises Pvt. Ltd.",
     companyLogo: "/iabhai-logo.jpeg",

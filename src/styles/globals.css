@@ -67,6 +67,18 @@
     collapsible-up var(--tw-duration, 200ms) ease-out,
     fade-out var(--tw-duration, 200ms) ease-out;
 
+  --animate-slow-blink: slow-blink 1.6s ease-in-out infinite;
+
+  @keyframes slow-blink {
+    0%,
+    100% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
   @keyframes fade-in {
     from {
       opacity: 0;

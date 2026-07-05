@@ -16,8 +16,8 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/twitter/twitter-original.svg",
     title: "X (formerly Twitter)",
-    description: "@Ani_meshX",
-    href: "https://x.com/Ani_meshX",
+    description: "@Ani_meshhh",
+    href: "https://x.com/Ani_meshhh",
   },
   {
     icon: "https://cdn.simpleicons.org/whatsapp/25D366",

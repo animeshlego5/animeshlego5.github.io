@@ -40,13 +40,13 @@ export default function Page() {
         <GitHubContributions />
         <Separator />
 
-        <TeckStack />
-        <Separator />
-
         <Experiences />
         <Separator />
 
         <Projects />
+        <Separator />
+
+        <TeckStack />
         <Separator />
 
         <Education />

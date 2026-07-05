@@ -1,4 +1,4 @@
-import { BoxIcon, InfinityIcon, LinkIcon } from "lucide-react";
+import { BoxIcon, LinkIcon } from "lucide-react";
 import Image from "next/image";
 
 import { Markdown } from "@/components/markdown";
@@ -33,7 +33,7 @@ export function ProjectItem({
   const isSinglePeriod = end === start;
 
   return (
-    <CollapsibleWithContext defaultOpen={project.isExpanded} asChild>
+    <CollapsibleWithContext defaultOpen={false} asChild>
       <div className={className}>
         <div className="flex cursor-pointer items-center transition-colors hover:bg-accent">
           <div
@@ -69,17 +69,7 @@ export function ProjectItem({
                     {!isSinglePeriod && (
                       <>
                         <span className="font-mono">—</span>
-                        {isOngoing ? (
-                          <>
-                            <InfinityIcon
-                              className="size-4.5 translate-y-[0.5px]"
-                              aria-hidden
-                            />
-                            <span className="sr-only">Present</span>
-                          </>
-                        ) : (
-                          <span>{end}</span>
-                        )}
+                        {isOngoing ? <span>Present</span> : <span>{end}</span>}
                       </>
                     )}
                   </dd>
@@ -108,7 +98,7 @@ export function ProjectItem({
                 className="flex shrink-0 items-center gap-1 text-xs text-foreground"
                 aria-hidden
               >
-                <CollapsibleChevronIcon />
+                <CollapsibleChevronIcon blinkWhenClosed />
               </div>
             </CollapsibleTrigger>
           </div>

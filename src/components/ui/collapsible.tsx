@@ -88,7 +88,13 @@ function CollapsibleChevronsIcon() {
   return <ChevronsDownUpIcon ref={ref} />;
 }
 
-function CollapsibleChevronIcon({ className }: { className?: string }) {
+function CollapsibleChevronIcon({
+  className,
+  blinkWhenClosed = false,
+}: {
+  className?: string;
+  blinkWhenClosed?: boolean;
+}) {
   const { open } = useCollapsible();
 
   return (
@@ -96,6 +102,11 @@ function CollapsibleChevronIcon({ className }: { className?: string }) {
       className={cn(
         "size-4 transition-transform duration-200 ease-in-out",
         open && "rotate-180",
+        // Always keep the animation applied so its timeline never resets;
+        // when open, opacity is pinned to 1 (overriding the keyframes), so the
+        // pulse stays phase-locked across every chevron even after toggling.
+        blinkWhenClosed && "animate-slow-blink",
+        blinkWhenClosed && open && "!opacity-100",
         className
       )}
     />
