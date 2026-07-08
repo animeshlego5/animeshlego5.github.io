@@ -88,6 +88,9 @@ function CollapsibleChevronsIcon() {
   return <ChevronsDownUpIcon ref={ref} />;
 }
 
+// Keep in sync with `--animate-slow-blink` in globals.css (1.6s).
+const SLOW_BLINK_DURATION_MS = 1600;
+
 function CollapsibleChevronIcon({
   className,
   blinkWhenClosed = false,
@@ -97,8 +100,25 @@ function CollapsibleChevronIcon({
 }) {
   const { open } = useCollapsible();
 
+  const ref = useRef<SVGSVGElement>(null);
+
+  useEffect(() => {
+    if (!blinkWhenClosed) return;
+
+    const el = ref.current;
+    if (!el) return;
+
+    // A CSS animation's timeline starts when the element mounts, so chevrons
+    // that mount later (e.g. project items revealed by "Show More") would blink
+    // out of phase with the rest. Snap every chevron to the same global phase
+    // grid via a negative delay so they all pulse in unison regardless of when
+    // they mount.
+    el.style.animationDelay = `-${performance.now() % SLOW_BLINK_DURATION_MS}ms`;
+  }, [blinkWhenClosed]);
+
   return (
     <ChevronDownIcon
+      ref={ref}
       className={cn(
         "size-4 transition-transform duration-200 ease-in-out",
         open && "rotate-180",
