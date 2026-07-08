@@ -1,6 +1,6 @@
 "use client";
 
-import { format } from "date-fns";
+import { format, getYear, parseISO } from "date-fns";
 import { LoaderIcon } from "lucide-react";
 import { use } from "react";
 
@@ -27,6 +27,13 @@ export function GitHubContributionGraph({
   contributions: Promise<Activity[]>;
 }) {
   const data = use(contributions);
+
+  // The API returns a rolling last-365-days window, so label it with the year
+  // of the most recent day (the end of the window) rather than the first.
+  const endYear =
+    data.length > 0
+      ? getYear(parseISO(data[data.length - 1].date))
+      : new Date().getFullYear();
 
   return (
     <TooltipProvider>
@@ -63,9 +70,9 @@ export function GitHubContributionGraph({
 
         <ContributionGraphFooter className="px-2">
           <ContributionGraphTotalCount>
-            {({ totalCount, year }) => (
+            {({ totalCount }) => (
               <div className="text-muted-foreground">
-                {totalCount.toLocaleString("en")} contributions in {year} on{" "}
+                {totalCount.toLocaleString("en")} contributions in {endYear} on{" "}
                 <a
                   className="font-medium underline underline-offset-4"
                   href={`https://github.com/${GITHUB_USERNAME}`}
