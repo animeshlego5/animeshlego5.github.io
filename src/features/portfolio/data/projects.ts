@@ -106,6 +106,74 @@ A Shazam-like web app with advanced music identification capabilities:
 [Read Medium Article](https://medium.com/@animeshlego5/how-notespy-works-deconstructing-a-shazam-clones-backend-7b2002013753)`,
     isExpanded: true,
   },
+];
+
+export const SIDE_PROJECTS: Project[] = [
+  {
+    id: "claudosaurus",
+    title: "Claudosaurus",
+    period: {
+      start: "06.2026",
+    },
+    link: "https://github.com/animeshlego5/Claudosaurus",
+    logo: "/claudosaurus-logo.svg",
+    skills: ["JavaScript", "HTML", "CLI", "npm", "VS Code"],
+    description: `Chrome Dino, inside Claude Code
+
+Turns Claude Code's idle "thinking" spinner into a playable, monochrome, Chrome-style dinosaur game — zero dependencies, patched into the extension's webview locally:
+
+- **Theme-matched pixel art** — a hand-drawn T-Rex, cacti, pterodactyls, and clouds rendered in the editor's own theme color.
+- **Pause-aware scoring** — the game freezes when Claude pauses, preserving your score across interruptions; flying enemies unlock past score thresholds.
+- **Persistent stats & settings** — lifetime games played, total jumps, and distance saved to local storage; tweak via in-game panel or console API.
+- **One-command install** — \`npx claudosaurus\` patches VS Code, Cursor, Windsurf, or Antigravity, with automatic backups and a clean uninstall.`,
+    isExpanded: true,
+  },
+  {
+    id: "expense-tracker",
+    title: "Expense Tracker",
+    period: {
+      start: "07.2026",
+    },
+    link: "https://expense-tracker-flame-sigma-87.vercel.app",
+    logo: "/expense-icon.svg",
+    skills: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Drizzle ORM",
+      "PostgreSQL",
+      "Better Auth",
+      "Tailwind CSS",
+      "Bun",
+    ],
+    description: `Pace-Aware Budgeting
+
+A mobile-first, multi-user expense + income tracker built around one question: are you on pace to stay under budget *before* the month ends, not after?
+
+- **Run-rate projections** — a dashboard with spent/income totals, a category donut chart, six-month comparison, and warning banners when spending approaches or exceeds budget; optional per-category caps.
+- **Fast entry** — a dedicated Add page with category picker, notes, and calendar date selection, plus separate filterable review pages.
+- **Accounts & modes** — email/password auth with 60-day persistent sessions; student mode hides income tracking.
+- **Modern stack** — Next.js 16 (App Router) + React 19 + TypeScript, Postgres via Drizzle (Neon prod, PGlite dev), Better Auth, Recharts, and Tailwind v4 on Bun.`,
+    isExpanded: true,
+  },
+  {
+    id: "labor-tracker",
+    title: "Labor Tracker",
+    period: {
+      start: "06.2026",
+    },
+    link: "https://github.com/animeshlego5/laborbook-clone",
+    logo: "/labor-tracker-logo.svg",
+    skills: ["Flutter", "Dart", "Riverpod", "GoRouter"],
+    description: `Daily-Attendance App (Flutter)
+
+A Flutter reimplementation of the Laborbook daily-attendance app for shop labor management (Phase 1):
+
+- **Themed, navigable shell** — an app theme built on Laborbook color tokens, with GoRouter navigation, a splash screen, and a bottom-nav shell.
+- **Riverpod state management** across the Labor, Cash Book, and Settings screens.
+- **Test-backed core** — unit tests over the theme and router, wired into a \`flutter analyze\` + \`flutter test\` workflow.`,
+    isExpanded: true,
+  },
   {
     id: "thinkweave-ai",
     title: "Think Weave.ai",

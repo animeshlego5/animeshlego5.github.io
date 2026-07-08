@@ -31,13 +31,19 @@ export function ProjectItem({
   const { start, end } = project.period;
   const isOngoing = !end;
   const isSinglePeriod = end === start;
+  // SVG logos always sit on a white tile (both themes) so the mark pops
+  // against the surrounding surface.
+  const isSvgLogo = project.logo?.toLowerCase().endsWith(".svg");
 
   return (
     <CollapsibleWithContext defaultOpen={false} asChild>
       <div className={className}>
         <div className="flex cursor-pointer items-center transition-colors hover:bg-accent">
           <div
-            className="mx-4 flex size-6 shrink-0 items-center justify-center rounded-lg border border-muted-foreground/15 bg-muted text-muted-foreground ring-1 ring-edge ring-offset-1 ring-offset-background select-none"
+            className={cn(
+              "mx-4 flex size-6 shrink-0 items-center justify-center rounded-lg border border-muted-foreground/15 bg-muted text-muted-foreground ring-1 ring-edge ring-offset-1 ring-offset-background select-none",
+              isSvgLogo && "bg-white"
+            )}
             aria-hidden="true"
           >
             {project.logo ? (

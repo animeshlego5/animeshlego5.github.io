@@ -8,6 +8,7 @@ import { Overview } from "@/features/portfolio/components/overview";
 import { ProfileCover } from "@/features/portfolio/components/profile-cover";
 import { ProfileHeader } from "@/features/portfolio/components/profile-header";
 import { Projects } from "@/features/portfolio/components/projects";
+import { SideProjects } from "@/features/portfolio/components/projects/side-projects";
 import { SocialLinks } from "@/features/portfolio/components/social-links";
 import { TeckStack } from "@/features/portfolio/components/teck-stack";
 import { USER } from "@/features/portfolio/data/user";
@@ -44,6 +45,9 @@ export default function Page() {
         <Separator />
 
         <Projects />
+        <Separator />
+
+        <SideProjects />
         <Separator />
 
         <TeckStack />
